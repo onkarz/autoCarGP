@@ -1,0 +1,7 @@
+
+<div *ngFor="let user of userInfo" class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{user.image}}" (click)="viewUser(user)" alt="Card image cap">
+    <div class="card-body">
+      <p class="card-text">{{user.name}}</p>
+    </div>
+  </div>

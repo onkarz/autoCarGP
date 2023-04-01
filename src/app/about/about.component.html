@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+
+    <button
+      type="button"
+      class="navbar-toggler"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarCollapse"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav"></div>
+      <div class="navbar-nav ms-auto">
+        <a style="margin-bottom: 10px;" *ngIf="!isUserLogedIn" routerLink="/login" class="btn btn-primary"
+          >Login</a
+        >
+        <a *ngIf="!isUserLogedIn" routerLink="/register" class="btn btn-primary"
+          >Register</a
+        >
+
+
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/myprofile">My profile</button>
+          <button mat-menu-item routerLink="/whoisusingourapp">
+            Who are using our app?
+          </button>
+        </mat-menu>
+
+        <b
+          ><h5 *ngIf="profileData" class="nav-item nav-link">
+            {{ profileData.name }}
+          </h5></b
+        >
+        <a *ngIf="isUserLogedIn" (click)="LogOut()" class="btn btn-primary"
+          >Log out</a
+        >
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div style="text-align: center;">
+  <img class="other" src="../../assets/img/01.jpeg" />
+</div>

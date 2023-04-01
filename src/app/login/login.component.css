@@ -1,0 +1,77 @@
+.formcontainer{
+    border: 2px solid  #0d6efd;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    border-radius: 40px;
+    margin-top:100px ;
+    margin-left: 550px;
+    margin-right: 550px;
+    height:450px;
+    width:380px;
+}
+h2{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 40px;
+    margin-left:95px;
+    margin-top:0px ;
+    margin-right: 150px;
+    color: #0d6efd;
+    margin-bottom: 0px;
+   
+   
+}
+.formcontainer input{
+   
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 50px;
+    width: 275px;
+    margin-left: 5px;
+    margin-right: 0px;
+    border:2px solid  #0d6efd;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:18px ;
+    padding-left: 90px;
+
+}
+a{
+   
+    margin-left: 75px;
+    margin-top: 0px;
+    font-size: 22px;
+    font-family:'Times New Roman', Times, serif;
+}
+a:hover{
+    color: red;
+}
+button{
+    background-color: #2d74dd;
+    margin-top: 30px;
+    margin-left: 110px;
+    height: 45px;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family:'Times New Roman', Times, serif;
+    color: rgb(245, 245, 245);
+}
+button:hover{
+    background-color:#1250ab;
+}
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}

@@ -1,0 +1,180 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+
+    <img class="logo" src="../assets/img/L1.webp" alt="">
+
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav">
+
+      </div>
+      <div  class="navbar-nav ms-auto">
+        <a  class="btn btn-primary" (click)="onClick()">Saved Products</a>
+        <a routerLink="/home" class="btn btn-primary">Home</a>
+        <a routerLink="/about" class="btn btn-primary">About Us</a>
+        <a data-bs-toggle="modal" data-bs-target="#exampleModal" #sellMyProduct class="btn btn-primary">Sell My
+          Product</a>
+        <a *ngIf="!isUserLogedIn" routerLink="/login" class="btn btn-primary">Login</a>
+        <a *ngIf="!isUserLogedIn" routerLink="/register" class="btn btn-primary">Register</a>
+        <img mat-button [matMenuTriggerFor]="menu" *ngIf="isUserLogedIn" class="nav-item nav-link " src="{{profileData.image}}" width="50" height="50"
+          alt="">
+
+        <img *ngIf="!isUserLogedIn" class="nav-item nav-link " src="../assets/img/dummy.jpg" width="50" height="50"
+          alt="">
+          
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="/myprofile" >My profile</button>
+  <button mat-menu-item routerLink="/whoisusingourapp" > Who are using our app?</button>
+</mat-menu>
+
+         <b><h5 *ngIf="profileData" class="nav-item nav-link">{{profileData.name}}</h5></b>  
+        <a *ngIf="isUserLogedIn" (click)="LogOut()" class="btn btn-primary">Log out</a>
+        
+       
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+ 
+ <div style="display: flex; flex-wrap: wrap;"  >
+  
+
+<div class="row mt-4" >
+
+   <app-showproducts *ngIf="isUserLogedIn" (onEditProduct)="edit($event)" (onRemoveProduct)="remove($event)"  >
+ </app-showproducts> 
+
+</div>
+</div> 
+
+
+
+<div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+
+
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="sellProductForm">
+          <h4 style="font-size: 20px; font-weight: bold">
+            Enter Personal Information
+          </h4>
+          <hr style="
+              height: 2px;
+              border-width: 0;
+              color: #000000;
+              background-color: rgb(0, 0, 0);
+            " />
+
+          <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Name" formControlName="name" />
+            </div>
+
+          </div>
+
+          <div class="row" style="margin-top: 20px">
+            <div class="col">
+              <input type="email" class="form-control" placeholder="Enter Your Email" formControlName="email" />
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Phone Number" formControlName="phone" />
+            </div>
+          </div>
+
+          <div class="row" style="margin-top: 20px">
+            <div class="col">
+              <textarea style="width: 100%" formControlName="address" id="w3review" name="w3review" rows="2" cols="50"
+                placeholder="Enter Your Address"></textarea>
+            </div>
+          </div>
+
+          <h4 style="font-size: 20px; font-weight: bold; margin-top: 20px">
+            Enter Product Information
+          </h4>
+          <hr style="
+              height: 2px;
+              border-width: 0;
+              color: #000000;
+              background-color: rgb(0, 0, 0);
+            " />
+
+          <div class="row">
+            <div class="col">
+              <label>
+                <input type="text" type="file" id="file" #fileInput (change)="selectFile($event)"
+                  aria-label="File browser example" formControlName="productImage" />
+              </label>
+            </div>
+          </div>
+
+          <hr style="
+              height: 2px;
+              border-width: 0;
+              color: #000000;
+              background-color: rgb(0, 0, 0);
+            " />
+
+          <div class="row" style="margin-top: 20px">
+            <div class="col">
+              <input style="border: 2px solid rgb(250, 230, 50)" type="text" formControlName="productName"
+                class="form-control" placeholder=" Product Name *" />
+            </div>
+          </div>
+
+          <div class="row" style="margin-top: 20px">
+            <div class="col">
+              <input style="border: 2px solid rgb(250, 230, 50)" type="text" formControlName="productBrand"
+                class="form-control" placeholder=" Product Brand *" />
+            </div>
+          </div>
+
+          <div class="row" style="margin-top: 20px">
+            <div class="col">
+              <input style="border: 2px solid rgb(250, 230, 50)" type="text" formControlName="productPrice"
+                class="form-control" placeholder=" Product Price *" />
+            </div>
+          </div>
+
+          <div class="row" style="margin-top: 20px">
+            <div class="col">
+              <input style="border: 2px solid rgb(250, 230, 50)" type="text" formControlName="productCategory"
+                class="form-control" placeholder=" Product Category *" />
+            </div>
+          </div>
+
+          <div class="row" style="margin-top: 20px">
+            <div class="col">
+              <textarea style="width: 100%" formControlName="productDescription" rows="4" cols="50"
+                placeholder="Product Description"></textarea>
+            </div>
+          </div>
+
+          <div class="row" style="margin-top: 20px">
+            <div class="col">
+              <label for="datepicker" class="form-label">Date</label>
+              <input type="date" class="form-control" id="datepicker" formControlName="date" />
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addProduct()">
+              Insert
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+

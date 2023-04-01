@@ -1,0 +1,68 @@
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>eCommerce Product Detail</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+  </head>
+
+  <body>
+	
+	<div class="container">
+		<div class="card">
+			<div class="container-fliud">
+				<div class="wrapper row">
+					<div class="preview col-md-6">
+						
+						<div class="preview-pic tab-content">
+							<button class="btn"><i class="fa fa-home" style="height: 100px;" routerLink="/home" ></i></button>
+						  <div class="tab-pane active" id="pic-1"><img src={{productInfo.productImage}} /></div>
+						</div>
+					</div>
+					<div class="details col-md-6">
+						<h4><strong>{{productInfo.productBrand}}</strong></h4>
+						<h2> <strong> <span>{{productInfo.productName}}</span></strong></h2>
+						
+						<div class="rating">
+							<div class="stars">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</div>
+							<span class="review-no">41 reviews</span>
+						</div>
+						<p class="product-description">{{productInfo.productDescription}}</p>
+						<h4 class="price">current price: <span>{{productInfo.productPrice}}</span></h4>
+						<p class="vote"> Name of the owner of the car  :  <strong>{{productInfo.name}}</strong></p>
+						<h5 class="vote">Contact Number of owner:
+			
+							<span class="vote" data-toggle="tooltip" title="xtra large"> <strong>{{productInfo.phone}}</strong></span>
+						</h5>
+						<h5 class="vote">Date of purchase car: 
+							
+							<span class="vote"><strong>{{productInfo.date}}</strong></span>
+						</h5>
+						<div class="action">
+							<button class="add-to-cart btn btn-default" style="height: 45px; width: 120px; margin-right: 20px;" type="button">Add to cart</button>
+							<button class="add-to-cart btn btn-default" style="height: 45px; width: 150px;"(click)="saveForLater()" type="button">Save for later</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>
