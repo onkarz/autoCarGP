@@ -19,6 +19,9 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
 import { ViewprofileComponent } from './viewprofile/viewprofile.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { SaveforlaterComponent } from './saveforlater/saveforlater.component';
+import { RentcarComponent } from './rentcar/rentcar.component';
+import { BookcarComponent } from './bookcar/bookcar.component';
+import { ThankyouComponent } from './thankyou/thankyou.component';
 // <-- #2 import module
 @NgModule({
   declarations: [
@@ -34,6 +37,9 @@ import { SaveforlaterComponent } from './saveforlater/saveforlater.component';
     MyprofileComponent,
     ViewprofileComponent,
     SaveforlaterComponent,
+    RentcarComponent,
+    BookcarComponent,
+    ThankyouComponent,
  
   ],
   imports: [

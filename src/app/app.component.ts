@@ -16,14 +16,14 @@ export class AppComponent {
 
   ngOnInit(){
 
-    this.userdata = JSON.parse(localStorage.getItem("userData")!);
-    console.log(this.userdata);
-    if(this.userdata !== null || this.userdata === undefined){
-      this.myrouter.navigate(["/home"]);
-    }
-    else{
-      this.myrouter.navigate(["/about"]);
-    }
+    // this.userdata = JSON.parse(localStorage.getItem("userData")!);
+    // console.log(this.userdata);
+    // if(this.userdata !== null || this.userdata === undefined){
+    //   this.myrouter.navigate(["/home"]);
+    // }
+    // else{
+    //   this.myrouter.navigate(["/about"]);
+    // }
    // this.checkuserlogined();
   }
 

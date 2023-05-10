@@ -15,7 +15,7 @@ export class NewserviceService {
     console.log(registerusers);
     return this.http.post<any>(this.users,registerusers);
   }
-  
+
   // userLogin(loginuser:any){
   //   console.log(loginuser);
   //   return this.http.post<any>('http://localhost:3000/loginUsers',loginuser);
@@ -48,5 +48,11 @@ getAllUsers(){
 
  putdata(product:any){
 console.log(product);
+ }
+
+
+ carBooking(bookingDetails:any){
+  console.log(bookingDetails);
+  return this.http.post<any>('http://localhost:3000/carBookings',bookingDetails);
  }
 }

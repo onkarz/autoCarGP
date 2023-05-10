@@ -346,6 +346,48 @@
       "id": 25
     }
   ],
+  "saveForLater": [],
+  "carBookings": [
+    {
+      "email": "onkar@gmail.com",
+      "name": "onkar",
+      "phone": "8888888888",
+      "address": "Jule Solapur, Solapur",
+      "pickup": "Solapur",
+      "drop": "Pune",
+      "seats": "5",
+      "coupon": "qwe2r44",
+      "payby": "Gpay",
+      "date": "2023-05-19",
+      "id": 1
+    },
+    {
+      "email": "priya@gmail.com",
+      "name": "Priya potdar",
+      "phone": 6549234658,
+      "address": "Pune",
+      "pickup": "Mumbai",
+      "drop": "Pune",
+      "seats": "2",
+      "coupon": "Mcsad1234",
+      "payby": "GPAY",
+      "date": "2023-05-27",
+      "id": 2
+    },
+    {
+      "email": "vprachi@gmail.com",
+      "name": "Prachi Vedpathak ",
+      "phone": 9876754300,
+      "address": "Samarth nagar,Baramati",
+      "pickup": "Pune",
+      "drop": "Mumbai",
+      "seats": "10",
+      "coupon": "QOEUR231",
+      "payby": "Gpay",
+      "date": "2023-05-24",
+      "id": 3
+    }
+  ],
   "posts": [
     {
       "id": 1,

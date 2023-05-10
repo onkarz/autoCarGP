@@ -23,23 +23,23 @@ export class HomeComponent {
   @ViewChild('sellMyProduct') sellMyProduct: any;
 
 
-  constructor(private myrouter:Router, private formbuilder: FormBuilder, private myservice: NewserviceService) { }
+    constructor(private myrouter:Router, private formbuilder: FormBuilder, private myservice: NewserviceService) { }
 
   ngOnInit() {
 
-    this.sellProductForm = this.formbuilder.group({
-      email: this.formbuilder.control(''),
-      name: this.formbuilder.control(''),
-      productName: this.formbuilder.control(''),
-      productBrand: this.formbuilder.control(''),
-      productPrice: this.formbuilder.control(''),
-      address: this.formbuilder.control(''),
-      phone: this.formbuilder.control(''),
-      productCategory: this.formbuilder.control(''),
-      productDescription: this.formbuilder.control(''),
-      productImage: this.formbuilder.control(''),
-      date: this.formbuilder.control(''),
-    });
+      this.sellProductForm = this.formbuilder.group({
+        email: this.formbuilder.control(''),
+        name: this.formbuilder.control(''),
+        productName: this.formbuilder.control(''),
+        productBrand: this.formbuilder.control(''),
+        productPrice: this.formbuilder.control(''),
+        address: this.formbuilder.control(''),
+        phone: this.formbuilder.control(''),
+        productCategory: this.formbuilder.control(''),
+        productDescription: this.formbuilder.control(''),
+        productImage: this.formbuilder.control(''),
+        date: this.formbuilder.control(''),
+      });
 
 
 
@@ -222,5 +222,9 @@ clearForm(){
       }
 
     });
+  }
+
+  bookCar(){
+    this.myrouter.navigate(["/bookcar"]);
   }
 }
